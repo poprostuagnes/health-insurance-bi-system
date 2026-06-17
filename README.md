@@ -1,4 +1,4 @@
-# Analiza Danych Ubezpieczeniowych & Dashboard BI
+# Analiza danych ubezpieczeniowych & dashboard BI
 
 ## Opis projektu
 Projekt analityczny obejmujący pełen cykl życia danych: od ekstrakcji i transformacji (ETL), przez budowę wielowymiarowej kostki OLAP, aż po wizualizację kluczowych wskaźników efektywności (KPI) w Power BI. Celem było stworzenie narzędzia wspierającego decyzje menedżerskie dotyczące rentowności polis.
@@ -80,8 +80,3 @@ Zestawienie predykcji stworzonych za pomocą Drzew Decyzyjnych, Klastrowania ora
 
 ---
 
-### Autorki projektu
-* **Magdalena Stanek**
-* **Agnieszka Słapińska**
-* Opiekun pracy: mgr inż. Joanna Rysz
-* *Politechnika Rzeszowska, 2026*

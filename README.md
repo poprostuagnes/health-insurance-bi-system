@@ -1,4 +1,4 @@
-# Analiza danych ubezpieczeniowych & dashboard BI
+# Analiza danych ubezpieczeniowych & Dashboard BI
 
 ## Opis projektu
 Projekt analityczny obejmujący pełen cykl życia danych: od ekstrakcji i transformacji (ETL), przez budowę wielowymiarowej kostki OLAP, aż po wizualizację kluczowych wskaźników efektywności (KPI) w Power BI. Celem było stworzenie narzędzia wspierającego decyzje menedżerskie dotyczące rentowności polis.
@@ -17,7 +17,7 @@ Projekt zrealizowany w ramach studiów na Politechnice Rzeszowskiej (Kierunek: I
 
 ---
 
-## Podgląd Dashboardu
+## Podgląd dashboardu
 
 ### 1. Wpływ demografii i historii medycznej na koszty ubezpieczenia
 Zestawienie pokazujące korelację wieku z rosnącymi kosztami oraz rozkład opłat w zależności od przebytych chorób i regionu zamieszkania.
@@ -42,10 +42,10 @@ Widok podsumowujący z najważniejszymi metrykami biznesowymi (całkowita liczba
 
 ---
 
-## Architektura Danych i Proces ETL (SSIS)
+## Architektura danych i proces ETL (SSIS)
 Projekt to nie tylko wizualizacja, ale pełen proces zasilania hurtowni danych, zrealizowany przy pomocy narzędzi klasy Enterprise.
 
-### 1. Modelowanie Danych (Schemat Gwiazdy)
+### 1. Modelowanie danych (Schemat Gwiazdy)
 Zaprojektowałam strukturę hurtowni danych w klasycznym modelu gwiazdy. Centralną osią jest tabela faktów (`Fact_Insurance`), otoczona tabelami wymiarów (m.in. `Dim_Patient`, `Dim_Medical`, `Dim_Coverage`), co zapewnia optymalizację pod kątem zapytań analitycznych.
 
 <kbd>
@@ -68,7 +68,7 @@ Proces zasilania tabeli faktów sprawnie przetwarza zbiory rzędu 1 000 000 reko
 
 ---
 
-## Zaawansowana Analityka i Data Mining
+## Zaawansowana analityka i data mining
 Projekt został rozszerzony o wykorzystanie algorytmów uczenia maszynowego do przewidywania kosztów leczenia.
 
 ### Porównanie modeli predykcyjnych

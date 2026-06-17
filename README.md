@@ -1,38 +1,29 @@
-# Health Insurance Business Intelligence & Predictive Analytics System
+# Analiza Danych Ubezpieczeniowych & Dashboard BI
 
-A comprehensive, production-grade **Business Intelligence (BI)** and **Data Mining** enterprise system designed for the medical insurance sector. The pipeline processes a high-volume dataset containing over **1,000,000 unique patient records**, transforming raw financial and physiological data into actionable strategic insights.
+## Opis projektu
+Projekt analityczny obejmujący pełen cykl życia danych: od ekstrakcji, czyszczenia i transformacji (ETL), przez budowę wielowymiarowej kostki OLAP oraz modeli Data Mining, aż po wizualizację kluczowych wskaźników efektywności (KPI) w Power BI. Celem projektu było stworzenie zaawansowanego narzędzia wspomagania decyzji menedżerskich dotyczących rentowności polis oraz szacowania ryzyka medycznego na zbiorze ponad 1 mln rekordów.
 
-The project was developed as an engineering system implementation at the **Rzeszów University of Technology** (Field: *Data Engineering and Analysis*).
+Projekt zrealizowany w ramach studiów na Politechnice Rzeszowskiej (Kierunek: Inżynieria i Analiza Danych).
 
----
+## Technologie i narzędzia
+* **Wizualizacja:** Power BI, DAX (tryb *Connect Live*)
+* **Hurtownie danych & Kostki OLAP:** SQL Server, SSAS (SQL Server Analysis Services), MDX
+* **Procesy ETL:** SSIS (SQL Server Integration Services)
+* **Inżynieria danych / AI:** SSAS Data Mining (Drzewa Decyzyjne, Sieci Neuronowe, Analiza Skupień), język DMX
+* **Język zapytań:** T-SQL
 
-## Tech Stack & System Architecture
+## Architektura i proces
+1.  **Czyszczenie i integracja danych (ETL):** Pobranie surowych danych i przygotowanie ich do analizy w SSIS przy użyciu zaawansowanego czyszczenia tekstowego (*Fuzzy Lookup*) oraz obsługi błędów.
+2.  **Modelowanie OLAP & Data Mining:** Zaprojektowanie struktury wymiarów (w schemacie gwiazdy) i miar w SSAS oraz implementacja algorytmów predykcyjnych do prognozowania kosztów i ryzyka.
+3.  **Wizualizacja:** Utworzenie interaktywnego dashboardu dla kadry zarządzającej połączonego bezpośrednio z kostką analityczną.
 
-The project implements a complete, end-to-end data pipeline leveraging the full **Microsoft Business Intelligence** ecosystem:
+## Podgląd Dashboardu
 
-*   **Data Warehouse (SQL Server):** Designed a physical relational database model utilizing a high-performance **Star Schema** (`Fact_Insurance` surrounded by optimized dimension tables: `Dim_Patient`, `Dim_Medical`, `Dim_Profile`, and `Dim_Coverage`). Developed a robust **Staging Area** to buffer and isolate raw I/O data streams.
-*   **Data Integration & Quality (SSIS):** Automated sequential data ingestion through multiple Data Flow Tasks. Implemented strict data cleansing routines via **Fuzzy Lookup** algorithms (for typographical auto-correction) and transactional stability through kaskade validation and soft error-handling (`Redirect Row` log redirection).
-*   **Multidimensional Analytics (SSAS):** Built an **OLAP Cube** featuring multi-level analytics hierarchies (*socio-geographic* and *demographic* drill-down dimensions). Developed dynamic, pre-compiled calculated measures and strategic financial risk alert monitors (**KPIs**) using advanced **MDX (Multi-Dimensional Expressions)**.
-*   **Data Mining & AI Engine (SSAS Data Mining):** Configured and evaluated three competing machine learning algorithms via **DMX (Data Mining Extensions)** queries:
-    *   *Microsoft Decision Trees* (for transparent, rule-based cost division routing)
-    *   *Microsoft Clustering* (for unsupervised segment discovery and patient cohort mining)
-    *   *Microsoft Neural Network* (for handling multi-layered, non-linear sensitivity analytics)
-*   **Data Visualization & Reporting (Power BI):** Designed interactive, C-level analytical executive dashboards connected directly via a server-side **Connect Live** mechanism to process queries in milliseconds.
+### 1. Wpływ demografii i historii medycznej na koszty ubezpieczenia
+Zestawienie pokazujące korelację wieku z rosnącymi kosztami, walidację skuteczności modeli AI (sieci neuronowych i drzew decyzyjnych) oraz rozkład opłat w zależności od przebytych chorób, wskaźnika BMI i nałogów (palenie tytoniu).
 
----
-
-## Executive Summary & Key Findings
-
-*   **Risk Factors Discovered:** The Neural Network and Decision Tree predictive models mathematically proved that the highest financial risk factor (information gain) for the portfolio is **nicotine addiction correlated with physiological obesity ($BMI > 30$)** and mature age.
-*   **Model Validation:** Direct validation on the Power BI dashboard (focusing on the 18–41 age cohort) demonstrated that the **Neural Network** and **Decision Tree** models provide the highest precision, dynamically aligning with real-world financial cost trends, whereas clustering serves best for global static baselines.
-*   **Business Impact:** The system equips insurance actuaries with an early warning mechanism, enabling predictive premium optimization, CRM integration, and proactive healthcare prevention routing (e.g., targeted wellness program discounts).
-
----
-
-##  Repository Structure & Documentation
-
-*   `/Dim *.dim`, `/*.cube`, `/*.dsv`, `/*.dmm` — Native Microsoft XML architecture and schema definition files mapping out dimensions, cube aggregations, and data mining models.
-*   `Sprawozdanie1.pdf` — Full academic engineering documentation containing comprehensive technical specifications, process schematics, ETL graphs, and BI design parameters (written in Polish).
+<kbd>
+  <img src="dashboard1.png" alt="Wpływ demografii i historii medycznej na koszty ubezpieczenia" width="800">
+</kbd>
 
 ---
-
